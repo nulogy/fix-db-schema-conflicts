@@ -8,9 +8,9 @@ appraise 'rails-5.0-rubocop-57' do
   gem 'rubocop', '~> 0.57.0'
 end
 
-appraise 'rails-5.0-rubocop-67' do
+appraise 'rails-5.0-rubocop-69' do
   gem 'rails', '5.0.7'
-  gem 'rubocop', '~> 0.67.0'
+  gem 'rubocop', '~> 0.69.0'
 end
 
 appraise 'rails-5.1-rubocop-52' do
@@ -23,9 +23,9 @@ appraise 'rails-5.1-rubocop-57' do
   gem 'rubocop', '~> 0.57.0'
 end
 
-appraise 'rails-5.1-rubocop-67' do
+appraise 'rails-5.1-rubocop-69' do
   gem 'rails', '5.1.7'
-  gem 'rubocop', '~> 0.67.0'
+  gem 'rubocop', '~> 0.69.0'
 end
 
 appraise 'rails-5.2-rubocop-52' do
@@ -38,7 +38,7 @@ appraise 'rails-5.2-rubocop-57' do
   gem 'rubocop', '~> 0.57.0'
 end
 
-appraise 'rails-5.2-rubocop-67' do
+appraise 'rails-5.2-rubocop-69' do
   gem 'rails', '5.2.3'
-  gem 'rubocop', '~> 0.67.0'
+  gem 'rubocop', '~> 0.69.0'
 end
