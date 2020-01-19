@@ -7,13 +7,14 @@ require_relative '../rubocop_version'
 Rake::Task['db:schema:dump'].enhance do
   include FixDBSchemaConflicts::RubocopVersion
 
-  puts "Dumping database schema with fix-db-schema-conflicts gem"
+  puts 'Dumping database schema with fix-db-schema-conflicts gem'
 
-  schema_filename = ENV['SCHEMA'] || if defined? ActiveRecord::Tasks::DatabaseTasks
-    File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, 'schema.rb')
-  else
-    "#{Rails.root}/db/schema.rb"
-  end
+  schema_filename = ENV['SCHEMA'] ||
+    if defined? ActiveRecord::Tasks::DatabaseTasks
+      File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, 'schema.rb')
+    else
+      "#{Rails.root}/db/schema.rb"
+    end
 
   autocorrect_config = FixDBSchemaConflicts::AutocorrectConfiguration.load
   rubocop_yml = File.expand_path("../../../#{autocorrect_config}", __dir__)
@@ -28,6 +29,7 @@ Rake::Task['db:schema:dump'].enhance do
   unless status.success?
     raise <<~MSG
       Unable to process #{schema_filename} using Rubocop
+      Command: #{rubocop_command}
       Error: #{stderr_str}
     MSG
   end
