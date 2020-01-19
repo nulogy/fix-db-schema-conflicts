@@ -1,4 +1,3 @@
-# coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fix_db_schema_conflicts/version'
@@ -22,10 +21,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'rails', '~> 5.0'
   spec.add_development_dependency 'rake', '~> 12.3'
-  spec.add_development_dependency 'rspec', '~>3.8'
+  spec.add_development_dependency 'rspec', '~>3.9'
   spec.add_development_dependency 'sqlite3', '~> 1.3', '< 1.4'
 
   spec.add_dependency 'rubocop', '>= 0.38.0'
 
-  spec.required_ruby_version = '~> 2.4'
+  spec.required_ruby_version = '~> 2.5'
 end
