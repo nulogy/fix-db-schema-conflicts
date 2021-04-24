@@ -84,6 +84,9 @@ an earlier version of Ruby.
  - [@rosscooperman](https://github.com/rosscooperman)
 
 ## Releases
+- 4.1.0
+  - Added support for new Rubocop 0.79+ schema (amckinnell)
+  - Bump development dependencies (amckinnell)
 - 4.0.0
   - Improve performance
   - Better compatibility with Rails db:schema:dump task
