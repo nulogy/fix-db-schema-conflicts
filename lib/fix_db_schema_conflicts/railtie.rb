@@ -1,7 +1,7 @@
 require 'fix-db-schema-conflicts'
 require 'rails'
 
-module FixDBSchemaConflicts
+module FixDbSchemaConflicts
   class Railtie < Rails::Railtie
     railtie_name :fix_db_schema_conflicts
     rake_tasks do

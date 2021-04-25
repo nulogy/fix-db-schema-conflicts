@@ -1,6 +1,6 @@
 require 'delegate'
 
-module FixDBSchemaConflicts
+module FixDbSchemaConflicts
   module SchemaDumper
     class ConnectionWithSorting < SimpleDelegator
       def extensions
@@ -33,7 +33,8 @@ module FixDBSchemaConflicts
     end
 
     def with_sorting
-      old, @connection = @connection, ConnectionWithSorting.new(@connection)
+      old = @connection
+      @connection = ConnectionWithSorting.new(@connection)
       result = yield
       @connection = old
       result
@@ -41,4 +42,4 @@ module FixDBSchemaConflicts
   end
 end
 
-ActiveRecord::SchemaDumper.send(:prepend, FixDBSchemaConflicts::SchemaDumper)
+ActiveRecord::SchemaDumper.prepend FixDbSchemaConflicts::SchemaDumper

@@ -5,18 +5,18 @@ require_relative '../autocorrect_configuration'
 require_relative '../rubocop_version'
 
 Rake::Task['db:schema:dump'].enhance do
-  include FixDBSchemaConflicts::RubocopVersion
+  include FixDbSchemaConflicts::RubocopVersion
 
   puts 'Dumping database schema with fix-db-schema-conflicts gem'
 
   schema_filename = ENV['SCHEMA'] ||
-    if defined? ActiveRecord::Tasks::DatabaseTasks
-      File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, 'schema.rb')
-    else
-      "#{Rails.root}/db/schema.rb"
-    end
+                    if defined? ActiveRecord::Tasks::DatabaseTasks
+                      File.join(ActiveRecord::Tasks::DatabaseTasks.db_dir, 'schema.rb')
+                    else
+                      Rails.root.join('db/schema.rb')
+                    end
 
-  autocorrect_config = FixDBSchemaConflicts::AutocorrectConfiguration.load
+  autocorrect_config = FixDbSchemaConflicts::AutocorrectConfiguration.load
   rubocop_yml = File.expand_path("../../../#{autocorrect_config}", __dir__)
 
   auto_correct_options = less_than_rubocop?(60) ? '--auto-correct' : '--safe-auto-correct'

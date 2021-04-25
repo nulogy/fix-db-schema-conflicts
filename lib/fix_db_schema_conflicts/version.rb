@@ -1,3 +1,3 @@
-module FixDBSchemaConflicts
-  VERSION='4.2.0'
+module FixDbSchemaConflicts
+  VERSION = '5.0.0'.freeze
 end
