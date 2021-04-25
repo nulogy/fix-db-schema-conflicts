@@ -1,5 +1,5 @@
-require 'fix_db_schema_conflicts/schema_dumper.rb'
+require 'fix_db_schema_conflicts/schema_dumper'
 
-module FixDBSchemaConflicts
+module FixDbSchemaConflicts
   require 'fix_db_schema_conflicts/railtie' if defined?(Rails)
 end

@@ -1,8 +1,8 @@
 require 'fix_db_schema_conflicts/rubocop_version'
 
-module FixDBSchemaConflicts
+module FixDbSchemaConflicts
   class AutocorrectConfiguration
-    include FixDBSchemaConflicts::RubocopVersion
+    include FixDbSchemaConflicts::RubocopVersion
 
     def self.load
       new.load
